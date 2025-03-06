@@ -21,8 +21,8 @@ sudo scp /tmp/default.bak                              nginx:/etc/nginx/conf.d/
 sudo ssh nginx mkdir /etc/nginx/html
 
 #Copy example1.html and example2.html to /etc/nginx/html
-curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/example{1,2}.html
-sudo scp /tmp/example{1,2}.html                          nginx:/etc/nginx/html
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/example{1,2,3,4}.html
+sudo scp /tmp/example{1,2,3,4}.html                          nginx:/etc/nginx/html
 
 #curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/mywebserver.bak
 #sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf.d/

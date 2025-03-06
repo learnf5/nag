@@ -8,6 +8,8 @@ PS4='+$(date +"%T.%3N"): '
 # sudo cp /tmp/hosts                                  /etc/hosts
 
 # update nginx host for the specific lab
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/hosts
+sudo scp /tmp/hosts    nginx:/etc/hosts
 
 #Remove default.conf file since this lab requires only default.bak
 sudo ssh nginx rm /etc/nginx/conf.d/default.conf
@@ -15,5 +17,12 @@ sudo ssh nginx rm /etc/nginx/conf.d/default.conf
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/default.bak
 sudo scp /tmp/default.bak                              nginx:/etc/nginx/conf.d/
 
-curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/mywebserver.bak
-sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf.d/
+#Create new directory /etc/nginx/html
+sudo ssh nginx mkdir /etc/nginx/html
+
+#Copy example1.html and example2.html to /etc/nginx/html
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/example{1,2}.html
+sudo scp /tmp/example{1,2}.html                          nginx:/etc/nginx/html
+
+#curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/mywebserver.bak
+#sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf.d/

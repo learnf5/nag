@@ -3,7 +3,9 @@ set -x
 PS4='+$(date +"%T.%3N"): '
 
 # update lab environment
-#sudo ssh nginx test -e /etc/nginx/conf.d/default.conf && sudo ssh nginx rm /etc/nginx/conf.d/default.conf
+#Vickis test file to see if showing up on skillable lab system
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab12/VICKI-test-file.txt
+sudo scp /tmp/VICKI-test-file.txt nginx:/home/student/
 
 # install 30 day nginx one trial licenses from Salesforce - EXPIRES April 4, 2025
 set +x

@@ -6,21 +6,6 @@ PS4='+$(date +"%T.%3N"): '
 curl --silent https://raw.githubusercontent.com/learnf5/nag/main/lab-info.md --output /tmp/lab-info.md
 brav_id=$(awk -F '|' "/$LAB_ID/"' {print $2}' /tmp/lab-info.md)
 
-###REMOVE since this is OLD HTML lab guide and we are now using skillable Markdown lab guides
-# install student guide
-#cat <<'EOF' >/home/student/Desktop/Lab_Guide.desktop
-#[Desktop Entry]
-#Version=1.0
-#Name=Lab Guide
-#Icon=document
-#Terminal=false
-#Type=Application
-#Categories=Application;
-#EOF
-#echo Exec=google-chrome --app=https://f5.bravais.com/s/$brav_id >>/home/student/Desktop/Lab_Guide.desktop
-#gio set /home/student/Desktop/Lab_Guide.desktop metadata::trusted true
-#chmod +x /home/student/Desktop/Lab_Guide.desktop
-
 # common files for all labs
 sudo ssh nginx mkdir --parents /home/ubuntu/public_html/application1
 sudo ssh nginx mkdir --parents /home/ubuntu/public_html/application2

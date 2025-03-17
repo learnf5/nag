@@ -11,7 +11,7 @@ curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.
 sudo scp /tmp/default.bak                              nginx:/etc/nginx/conf.d/
 
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/mywebserver.bak
-sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf.d/mywebserver.conf
+sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf.d/
 
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/return_test.bak
 sudo scp /tmp/return_test.bak                              nginx:/etc/nginx/conf.d/

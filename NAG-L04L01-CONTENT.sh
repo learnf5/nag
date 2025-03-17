@@ -15,3 +15,6 @@ sudo scp /tmp/mywebserver.bak                              nginx:/etc/nginx/conf
 
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab03/return_test.bak
 sudo scp /tmp/return_test.bak                              nginx:/etc/nginx/conf.d/
+
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab04/Lab4_index.html
+sudo scp /tmp/Lab4_index.html                              nginx:/home/ubuntu/public_html/index.html

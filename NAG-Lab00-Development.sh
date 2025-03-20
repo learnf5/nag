@@ -7,6 +7,7 @@ PS4='+$(date +"%T.%3N"): '
 # curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/lab01/hosts
 # sudo cp /tmp/hosts                                  /etc/hosts
 
+# simple command to test and confirm this script is being run at launch.
 touch /home/student/Desktop/hello.txt
 
 # update nginx host for the specific lab

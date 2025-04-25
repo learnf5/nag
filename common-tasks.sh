@@ -25,8 +25,15 @@ curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.
 sudo scp /tmp/service*.html                                nginx:/home/ubuntu/public_html/shop/services/
 
 sudo ssh nginx mkdir --parents /data/images
+sudo ssh nginx mkdir --parents /data/animals
+sudo ssh nginx mkdir --parents /data/cars
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/common/data/images/logo.png
 sudo scp /tmp/logo.png                                    nginx:/data/images/
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/common/data/images/cat.png
+sudo scp /tmp/cat.png                                    nginx:/data/animals/
+curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/common/data/images/car.png
+sudo scp /tmp/car.png                                    nginx:/data/cars/
+
 
 sudo ssh nginx mkdir --parents /data/server2/sampleapp
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/nag/main/common/data/server2/sampleapp/index.html
